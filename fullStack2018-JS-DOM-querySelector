@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>querySelector</title>
+</head>
+<body>
+	<div id='number'> 123 </div>
+	<div id='number1'> 456 </div>
+	<div class='num'> abc </div>
+	<div class='num'> def </div>
+	<div class='num'> gyu </div>
+	<div name='container'>
+		<div>aaa</div>
+		<div>bbb</div>
+		<p>123</p>
+		<div>ccc</div>
+	</div>
+</body>
+</html>
+<script>
+	//querySelector()选取单个元素
+	var num = document.querySelector('#number');
+	console.log( num );
+
+	//querySelectorAll()选取多个元素
+	var nums = document.querySelectorAll('.num');
+	console.log( nums );
+
+	//兼容性问题
+	//该选择器仅适合IE8以上版本
+</script>
