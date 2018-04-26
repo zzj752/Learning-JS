@@ -1,0 +1,23 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取元素</title>
+</head>
+<body>
+	<div id="container">
+		<div>123</div>
+		<p>12121</p>
+		<div>456</div>
+	</div>
+	<div>
+		'Sunshine Day';
+	</div>
+</body>
+</html>
+<script>
+	var container = document.getElementById( 'container' );
+	console.log( container );
+	var divs = container.getElementsByTagName( 'div' );
+	console.log( divs );  
+</script>
