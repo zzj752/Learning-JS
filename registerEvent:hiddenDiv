@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册事件：隐藏DIV</title>
+	<style>
+		.show {
+			width: 500px;
+			height: 500px;
+			background-color: red;
+		}
+		.hidden {
+			display: hidden;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id='button' value='a'>
+	<br>
+	<!-- <img id='image' src="images/a.jpg" height="375" width="500" alt="图片"> -->
+	<div id='divs' class='show'>123</div>
+</body>
+</html>
+<script>
+	//1.获取元素
+	var button = document.getElementById('button');
+	
+	//2.注册事件
+	button.onclick = function() {
+		var divs = document.getElementById('divs');
+		divs.className = 'hidden'; // Tips:获取元素的属性不包括style，更改style属性需要直接修改ClassName（Class是保留字，不能直接引用）
+	}
+</script>
