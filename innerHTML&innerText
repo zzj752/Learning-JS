@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box">
+		我一个div
+		<span>这是一个span</span>
+	</div>
+	
+	<script>
+		var box = document.getElementById('box');
+
+		console.dir( box );
+
+		console.log( box.innerHTML );
+		//innerHTML: 包括格式、标签等完全内容
+		console.log( box.innerText );
+		//innerText: 仅包含标签内的内容
+
+		// box.innerText = '<b>黑马</b>程序员';  查看文本点击as html后查看
+		box.innerHTML = '&ltb&gt黑马&ltb&gt程序员&copy';
+
+		/* HTML转义字符 
+			1." &quot;
+			2.' &apos;
+			3.& &amp;
+			4.< &lt; // less than 小于
+			5.> &gt; // gather than 大于
+			6.空格 &nbsp;
+			7.©	&copy;
+		*/
+	</script>
+</body>
+</html>
