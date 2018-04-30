@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>innerText&textCotent兼容性问题</title>
+</head>
+<body>
+	<div id='box'>
+		hello
+	</div>
+	<script>
+		var box = document.getElementById( 'box' );
+
+		//兼容性问题处理
+		function getInnerText( element ) {
+			if ( typeof element.innerText == 'string' ) {
+				return element.innerText;
+			}else {
+				return element.textContent;
+			}
+		} 
+	</script>
+</body>
+</html>
