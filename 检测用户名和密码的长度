@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>检测登录名和密码</title>
+	<style>
+		.bg {
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="txtUserName"> <br>
+    <input type="password" id="txtUserPassword"> <br>
+    <input type="button" value=" 登 录 " id="btnLogin">
+	<script>
+		//1.获取元素
+		var userName = document.getElementById( 'txtUserName' );
+		var password = document.getElementById( 'txtUserPassword');
+		var btn = document.getElementById('btnLogin');
+
+		//2.检测用户名和密码
+		btn.onclick = function() {
+			//检测用户名
+			if ( userName.value.length < 3 || userName.value.length > 6 ) {
+				userName.className = 'bg';
+			}else {
+				userName.className = '';
+			}
+
+			//检测密码
+			if ( password.value.length < 6 || password.value.length > 8 ) {
+				password.className = 'bg';
+			}else {
+				password.className = '';
+			}
+		}
+	</script>
+</body>
+</html>
