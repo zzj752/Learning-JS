@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>隔行变色和高亮显示</title>
+	<script src='common.js'></script>
+</head>
+<body>
+	<ul id="mv">
+    	<li>西施</li>
+    	<li>貂蝉</li>
+    	<li>王昭君</li>
+    	<li>杨玉环</li>
+    	<li>芙蓉姐姐</li>
+ 	 </ul>
+	<script>
+	  
+	  var uls = document.getElementById( 'mv' );
+	  var lis = uls.getElementsByTagName( 'li' );
+
+	  for ( var i = 0; i < lis.length; i++ ) {
+	  	var li = lis[i];
+	  	//1.隔行变色
+	  	if ( i % 2 ) {
+	  		li.style.backgroundColor = 'lightgray';
+	  	}else {
+	  		li.style.backgroundColor = '#F3F3F3';
+	  	}
+
+	  	//2.高亮显示
+	  	var flag;
+	  	li.onmouseover = function () {
+	  		flag = this.style.backgroundColor;
+	  		this.style.backgroundColor = 'white';
+	  	}
+	  	li.onmouseout = function() {
+	  		this.style.backgroundColor = flag;
+	  	}
+	  }
+
+	</script>
+</body>
+</html>
