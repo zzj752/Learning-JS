@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>开关灯</title>
+	<script src='common.js'></script>
+</head>
+<body>
+	<input type="button" value="关灯" id='btn'>
+	<script>
+		var btns = my$('btn');
+		btns.onclick = function() {
+			if ( btns.value == '关灯' ) {
+				document.body.style.backgroundColor = 'black';
+				btns.value = '开灯';	
+			}else if ( btns.value == '开灯' ) {
+				document.body.style.backgroundColor = 'white';
+				btns.value = '关灯';
+			}
+			
+		}
+	</script>
+</body>
+</html>
