@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>样式操作(显示隐藏DIV)</title>
+	<script src="common.js"></script>
+	<style>
+		.show {
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn" value="点我"> <br>
+	<div id="box"></div>
+	<script>
+		//第一种方法：class样式法
+		// my$('btn').onclick = function () {
+		// 	if ( this.value == '点我' ) {
+		// 		my$('box').className = 'show';
+		// 		this.value = '隐藏';
+		// 	}else {
+		// 		my$('box').className = '';
+		// 		this.value = '点我';
+		// 	}
+		// }
+
+		//第二种方法：行内样式法
+		my$( 'btn' ).onclick = function () {
+			if ( this.value == '点我' ) {
+				my$('box').style.width = '100px';
+				my$('box').style.height = '100px';
+				my$('box').style.backgroundColor = 'blue';
+			}
+		}		
+
+
+	</script>
+</body>
+</html>
