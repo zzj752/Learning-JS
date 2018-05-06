@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>隐藏显示二维码</title>
+	<script src='common.js'></script>
+	<style>
+		.nodeSmall {
+			background: url(images/bgs.png) no-repeat -151px -51px;
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			margin-top: -50px;
+		}
+
+		.hide {
+			display: none;
+		}
+
+		.show {
+			display: block;
+			position: absolute;
+			left: -145px;
+		}
+	</style>
+</head>
+<body>
+	<div class="nodeSmall" id="node_small">
+		<div class="erweima hide" id="er">
+			<img src="images/456.png" alt="二维码">
+		</div>
+	</div>
+	<script>
+		var node = my$( 'node_small' );
+		console.dir( node );
+		var er = my$( 'er' );
+		node.onmouseover = function () {
+			er.className = er.className.replace( 'hide', 'show');
+		}
+		node.onmouseout = function () {
+			er.className = er.className.replace('show', 'hide')
+		}
+	</script>
+</body>
+</html>
