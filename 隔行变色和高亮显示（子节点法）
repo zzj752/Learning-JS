@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>隔行变色和高亮显示</title>
+	<script src='common.js'></script>
+</head>
+<body>
+	<ul id="mv">
+    	<li>西施</li>
+    	<li>貂蝉</li>
+    	<li>王昭君</li>
+    	<li>杨玉环</li>
+    	<li>芙蓉姐姐</li>
+ 	 </ul>
+	<script>	  
+	  var ul = document.getElementById( 'mv' );
+	  console.dir( ul );
+	  console.log( ul.childNodes ); //childNodes包含所有节点（元素、文本、注释）
+	  console.log( ul.children ); //children只包含元素节点
+
+	  for ( var i = 0; i < ul.children.length; i++ ) {
+	  	if ( i % 2 ) {
+	  		ul.children[i].style.backgroundColor = '#3F3F3F';
+	  	}else {
+	  		ul.children[i].style.backgroundColor = '#9F9F9F';
+	  	}
+	  }
+	</script>
+</body>
+</html>
