@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态创建元素</title>
+	<script src='common.js'></script>
+</head>
+<body>
+	<input type="button" value="按钮" id='btn'>
+	<div id="box"></div>
+	<script>
+	
+		var box = my$( 'box' );
+		var btn = my$( 'btn' );
+		var list = ['奶瓶', '奶盖', '奶昔', '奶嘴'];
+
+	//1.最节省内存空间的方法——数组法(仅在最后占用内存)
+		btn.onclick = function() {
+			var array = [];
+			array.push('<ul>');
+			for ( var i = 0; i < list.length; i++ ) {
+				array.push( '<li>' + list[i] + '</li>' );
+			}
+			array.push('</ul>');
+			box.innerHTML += array.join('');
+		}
+		
+		//2.基本方法——直接在box.innerHTML中添加修改（不足：每次都要获取box，内存占有率太高）
+		// btn.onclick = function() {
+		// 	box.innerHTML = '<ul>';
+		// 	for ( var i = 0; i < list.length; i++ ) {
+		// 		box.innerHTML += '<li>' + list[i] + '</li>';
+		// 	}
+		// 	box.innerHTML += '</ul>';
+		// }
+
+		//3.改进方法——字符串代替box.innerHTML(不足：字符串不能修改，每次都要单独创建，依然占有太多内存)
+		// btn.onclick = function () {
+		// 	var html = '<ul>';
+		// 	for ( var i = 0; i < list.length; i++ ) {
+		// 		html += '<li>' + list[i] + '</li>';
+		// 	}
+		// 	html += '</ul>';
+		// 	box.innerHTML = html;			
+		// }
+	</script>
+</body>
+</html>
