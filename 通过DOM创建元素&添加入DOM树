@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>通过DOM创建元素并将其加入DOM树中</title>
+</head>
+<body>
+	<input type="button" id="btn">
+	<div id='box'>
+	</div>
+	<script>
+		//1.在内存中创建新元素
+		var p = document.createElement( 'p' );
+		var box = document.getElementById( 'box' );
+		var btn = document.getElementById( 'btn' );
+
+		//2.设置P标签样式
+		p.innerText = '王狗啦啦啦';
+		p.style.color = 'red';
+
+		//3.将元素添加入DOM树种
+		btn.onclick = function() {
+			box.appendChild( p );	
+		}
+		
+	</script>
+</body>
+</html>
