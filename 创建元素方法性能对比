@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>性能对比</title>
+</head>
+<body>
+	<script>
+		//1.直接innerHTML拼接法（最慢）
+		function fn() {
+			var d1 = +new Date();
+			
+			for ( var i = 0; i < 1000; i++ ) {
+				document.body.innerHTML += '<div style="width:100px; height:2px; border:1px solid blue;"></div>';
+			}
+
+			var d2 = +new Date();
+
+			console.log( d2 - d1 );
+
+		}
+		fn()
+
+		//2.字符串拼接后再innerHTML法（第一快）
+		function fn1() {
+			var d1 = +new Date();
+			var str = '';
+			for ( var i = 0; i < 1000; i++ ) {
+				str += '<div style="width:100px; height:2px; border:1px solid blue;"></div>';
+			}
+			document.body.innerHTML = str; 
+
+			var d2 = +new Date();
+
+			console.log( d2 - d1 );
+		}
+		fn1()
+
+		//3.DOM树法(第二快)
+		function fn2() {
+			var d1 = +new Date();
+			// var div;
+			for ( var i = 0; i < 1000; i++ ) {
+			    var div = document.createElement( 'div' );
+				div.style.width = '100px';
+				div.style.height = '2px';
+				div.style.border = '1px solid blue';
+				document.body.appendChild( div );
+			}
+			var d2 = +new Date();
+			console.log( d2 - d1 );
+		}
+		fn2();
+	</script>
+</body>
+</html>
