@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+	<input type="button" id='btn' value='按钮'>
+</body>
+<script>
+	var btn = document.getElementById( 'btn' );
+
+	// 一个按钮绑定两个事件的方法：addEventListener
+	btn.addEventListener('click', function () {
+		alert('hello world!');
+	})
+
+	btn.addEventListener('click', function () {
+		alert('yoyoyo check now!');
+	})
+</script>
+</html>
